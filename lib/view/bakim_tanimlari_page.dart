@@ -14,7 +14,14 @@ class BakimTanimlariPage extends StatefulWidget {
 
 class _BakimTanimlariPageState extends State<BakimTanimlariPage> {
   final UserController _userController = Get.find();
+  ScrollController _scrollController = ScrollController();
   bool isVisible = false;
+  @override
+  void initState() {
+    _scrollController = ScrollController();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,18 +75,24 @@ class _BakimTanimlariPageState extends State<BakimTanimlariPage> {
                       visible: isVisible,
                       child: Flexible(
                         child: Container(
-                          padding: EdgeInsets.all(10),
-                          child: ListView.builder(
-                            itemBuilder: (BuildContext context, index) {
-                              return BakimTanimCard(
-                                bakimTanimlari:
-                                    _userController.getBakimTanimlari()![index],
-                              );
-                            },
-                            itemCount:
-                                _userController.getBakimTanimlari()!.length,
-                          ),
-                        ),
+                            padding: EdgeInsets.all(10),
+                            child: Scrollbar(
+                              isAlwaysShown: true,
+                              thickness: 5,
+                              controller: _scrollController,
+                              radius: Radius.circular(15),
+                              child: ListView.builder(
+                                controller: _scrollController,
+                                itemBuilder: (BuildContext context, index) {
+                                  return BakimTanimCard(
+                                    bakimTanimlari: _userController
+                                        .getBakimTanimlari()![index],
+                                  );
+                                },
+                                itemCount:
+                                    _userController.getBakimTanimlari()!.length,
+                              ),
+                            )),
                       ),
                     ),
                   ],

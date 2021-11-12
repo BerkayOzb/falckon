@@ -14,7 +14,13 @@ class EkipmanTanimlariPage extends StatefulWidget {
 
 class _EkipmanTanimlariPageState extends State<EkipmanTanimlariPage> {
   final UserController _userController = Get.find();
+  ScrollController _scrollController = ScrollController();
   bool isVisible = false;
+  void initState() {
+    _scrollController = ScrollController();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,17 +74,23 @@ class _EkipmanTanimlariPageState extends State<EkipmanTanimlariPage> {
                       visible: isVisible,
                       child: Flexible(
                         child: Container(
-                          padding: EdgeInsets.all(10),
-                          child: ListView.builder(
-                            itemBuilder: (BuildContext context, index) {
-                              return EkipmanCard(
-                                ekipmanIstek:
-                                    _userController.getEkipman()![index],
-                              );
-                            },
-                            itemCount: _userController.getEkipman()!.length,
-                          ),
-                        ),
+                            padding: EdgeInsets.all(10),
+                            child: Scrollbar(
+                              isAlwaysShown: true,
+                              thickness: 5,
+                              controller: _scrollController,
+                              radius: Radius.circular(15),
+                              child: ListView.builder(
+                                controller: _scrollController,
+                                itemBuilder: (BuildContext context, index) {
+                                  return EkipmanCard(
+                                    ekipmanIstek:
+                                        _userController.getEkipman()![index],
+                                  );
+                                },
+                                itemCount: _userController.getEkipman()!.length,
+                              ),
+                            )),
                       ),
                     ),
                   ],

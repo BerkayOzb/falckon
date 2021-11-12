@@ -156,12 +156,13 @@ class _AdresCardState extends State<AdresCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       color: Color(AppColors.secondarycolor),
       shape: RoundedRectangleBorder(
           side: BorderSide(width: 0), borderRadius: BorderRadius.circular(10)),
       child: Center(
         child: ExpansionTile(
-          tilePadding: EdgeInsets.symmetric(vertical: 2),
+          tilePadding: EdgeInsets.symmetric(vertical: 2, horizontal: 5),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
             children: [],
@@ -220,12 +221,13 @@ class _EkipmanCardState extends State<EkipmanCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       color: Color(AppColors.secondarycolor),
       shape: RoundedRectangleBorder(
           side: BorderSide(width: 0), borderRadius: BorderRadius.circular(10)),
       child: Center(
         child: ExpansionTile(
-          tilePadding: EdgeInsets.symmetric(vertical: 2),
+          tilePadding: EdgeInsets.symmetric(vertical: 2, horizontal: 5),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
             children: [],
@@ -286,12 +288,13 @@ class _BakimTanimCardState extends State<BakimTanimCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       color: Color(AppColors.secondarycolor),
       shape: RoundedRectangleBorder(
           side: BorderSide(width: 0), borderRadius: BorderRadius.circular(10)),
       child: Center(
         child: ExpansionTile(
-          tilePadding: EdgeInsets.symmetric(vertical: 2),
+          tilePadding: EdgeInsets.symmetric(vertical: 2, horizontal: 5),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
             children: [],
@@ -349,6 +352,7 @@ class _BakimDetayCardState extends State<BakimDetayCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       color: Color(AppColors.secondarycolor),
       shape: RoundedRectangleBorder(
           side: BorderSide(width: 0), borderRadius: BorderRadius.circular(10)),
@@ -364,7 +368,7 @@ class _BakimDetayCardState extends State<BakimDetayCard> {
                   fontWeight: FontWeight.bold),
             ),
           ),
-          tilePadding: EdgeInsets.symmetric(vertical: 2),
+          tilePadding: EdgeInsets.symmetric(vertical: 2, horizontal: 5),
           children: <Widget>[
             Container(
               padding: EdgeInsets.symmetric(vertical: 10),
@@ -407,6 +411,7 @@ class _SetBakimDetayCardState extends State<SetBakimDetayCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       color: Color(AppColors.secondarycolor),
       shape: RoundedRectangleBorder(
           side: BorderSide(width: 0), borderRadius: BorderRadius.circular(10)),
@@ -422,7 +427,7 @@ class _SetBakimDetayCardState extends State<SetBakimDetayCard> {
                   fontWeight: FontWeight.bold),
             ),
           ),
-          tilePadding: EdgeInsets.symmetric(vertical: 2),
+          tilePadding: EdgeInsets.symmetric(vertical: 2, horizontal: 5),
           children: <Widget>[
             Container(
               padding: EdgeInsets.symmetric(vertical: 10),

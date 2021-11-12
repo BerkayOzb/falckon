@@ -1,3 +1,4 @@
+import 'package:falckonfirecommander/materials/colors.dart';
 import 'package:falckonfirecommander/materials/languages.dart';
 import 'package:falckonfirecommander/view/adres_page.dart';
 import 'package:falckonfirecommander/view/bakim_detaylari_page.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: LoginPage(),
       builder: EasyLoading.init(),
+      theme: ThemeData(highlightColor: Colors.black38),
       getPages: [
         GetPage(name: '/homepage', page: () => HomePage()),
         GetPage(name: '/homepage2', page: () => HomePageFirst()),

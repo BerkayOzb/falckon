@@ -14,7 +14,13 @@ class AdresPage extends StatefulWidget {
 
 class _AdresPageState extends State<AdresPage> {
   final UserController _userController = Get.find();
+  ScrollController _scrollController = ScrollController();
   bool isVisible = false;
+  void initState() {
+    _scrollController = ScrollController();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,17 +74,24 @@ class _AdresPageState extends State<AdresPage> {
                       visible: isVisible,
                       child: Flexible(
                         child: Container(
-                          padding: EdgeInsets.all(10),
-                          child: ListView.builder(
-                            itemBuilder: (BuildContext context, index) {
-                              return AdresCard(
-                                adresIstek:
-                                    _userController.getAdresler()![index],
-                              );
-                            },
-                            itemCount: _userController.getAdresler()!.length,
-                          ),
-                        ),
+                            padding: EdgeInsets.all(10),
+                            child: Scrollbar(
+                              isAlwaysShown: true,
+                              thickness: 5,
+                              controller: _scrollController,
+                              radius: Radius.circular(15),
+                              child: ListView.builder(
+                                controller: _scrollController,
+                                itemBuilder: (BuildContext context, index) {
+                                  return AdresCard(
+                                    adresIstek:
+                                        _userController.getAdresler()![index],
+                                  );
+                                },
+                                itemCount:
+                                    _userController.getAdresler()!.length,
+                              ),
+                            )),
                       ),
                     ),
                   ],
