@@ -108,9 +108,10 @@ class _AfterScanPage extends State<AfterScanPage> {
                       },
                       icon: Icon(
                         Icons.qr_code,
+                        size: 35,
                       )),
                   DetPage(
-                      textValue: 'BULUNDUĞU YERİ GÜNCELLE',
+                      textValue: 'KONUMU GÜNCELLE',
                       widthh: Get.width,
                       method: () async {
                         await getLocation();
@@ -120,14 +121,20 @@ class _AfterScanPage extends State<AfterScanPage> {
                           dismissOnTap: true,
                         );
                       },
-                      icon: Icon(Icons.location_on)),
+                      icon: Icon(
+                        Icons.location_on,
+                        size: 35,
+                      )),
                   DetPage(
                       widthh: Get.width,
-                      textValue: 'EKİPMAN KONTROL BAŞLAT',
+                      textValue: 'KONTROL BAŞLAT',
                       method: () {
                         Get.toNamed('/equipmentcontrolpage');
                       },
-                      icon: Icon(Icons.trending_up)),
+                      icon: Icon(
+                        Icons.play_arrow,
+                        size: 35,
+                      )),
                   Obx(() => RequestPageDetailed2(
                       title: 'KODU', value: _scannerContraller.data.value)),
                   RequestPageDetailed2(title: 'ADI', value: 'How is it look'),
