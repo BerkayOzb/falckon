@@ -358,6 +358,11 @@ class _BakimDetayCardState extends State<BakimDetayCard> {
           side: BorderSide(width: 0), borderRadius: BorderRadius.circular(10)),
       child: Center(
         child: ExpansionTile(
+          tilePadding: EdgeInsets.symmetric(vertical: 2, horizontal: 5),
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [],
+          ),
           title: Container(
             margin: EdgeInsets.symmetric(horizontal: 10),
             child: Text(
@@ -368,13 +373,16 @@ class _BakimDetayCardState extends State<BakimDetayCard> {
                   fontWeight: FontWeight.bold),
             ),
           ),
-          tilePadding: EdgeInsets.symmetric(vertical: 2, horizontal: 5),
           children: <Widget>[
             Container(
               padding: EdgeInsets.symmetric(vertical: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  RequestPageDetailed2(
+                      title: 'Planlı Bakım Tanım ID',
+                      value:
+                          widget.bakimDetaylari.planlibakimtanimid.toString()),
                   RequestPageDetailed2(
                       title: 'Bakım Kodu',
                       value: widget.bakimDetaylari.bakimislemkodu!),

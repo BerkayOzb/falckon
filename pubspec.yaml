@@ -29,6 +29,7 @@ dependencies:
   flutter_barcode_scanner: ^2.0.0
   shared_preferences: ^2.0.8
   sqflite:
+  geolocator: ^7.7.0
 
 
 

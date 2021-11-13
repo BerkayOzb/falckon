@@ -16,7 +16,7 @@ Future<dynamic> getFirmaAdres() async {
   Map<String, dynamic> inputData = {
     "LOGINKODU": _userController.username,
     "SIFRE": _userController.password,
-    "PARAMETRELER": {}
+    "PARAMETRELER": {"FIRMATANIMID": "1"}
   };
   var body = json.encode(inputData);
   var url = Uri.parse(ApiProvider.firmaAdres);
@@ -38,6 +38,7 @@ Future<dynamic> getFirmaAdres() async {
         adrestipadi: order["ADRESTIPADI"] ?? "",
       ));
     }
+    _userController.deleteAdresler();
     _userController.addListAdresler(adresler);
     return (resBodyValues as List).map((e) {
       DBProvider.db.createAdresList(Adres.fromMap(e));

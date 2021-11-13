@@ -16,7 +16,7 @@ Future<dynamic> getBakimDetaylari() async {
   Map<String, dynamic> inputData = {
     "LOGINKODU": _userController.username,
     "SIFRE": _userController.password,
-    "PARAMETRELER": {}
+    "PARAMETRELER": {"PLANLIBAKIMTANIMID": "1"}
   };
   var body = json.encode(inputData);
   var url = Uri.parse(ApiProvider.bakimDetaylari);
@@ -35,6 +35,7 @@ Future<dynamic> getBakimDetaylari() async {
         planlibakimtanimid: order["PLANLIBAKIMTANIMID"],
       ));
     }
+    _userController.deleteBakimDetaylari();
     _userController.addListBakimDetaylar(bakimDetaylari);
     return (resBodyValues as List).map((e) {
       DBProvider.db.createBakimDetayList(BakimDetaylari.fromMap(e));

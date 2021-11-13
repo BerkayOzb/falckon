@@ -3,7 +3,7 @@ import 'dart:convert';
 List<Kullanici> kullaniciFromMap(String str) =>
     List<Kullanici>.from(json.decode(str).map((x) => Kullanici.fromMap(x)));
 
-String adresToMap(List<Kullanici> data) =>
+String kullaniciToMap(List<Kullanici> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toMap())));
 
 class Kullanici {

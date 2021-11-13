@@ -23,18 +23,17 @@ Future<dynamic> getUserValues() async {
   http.Response response = await http.post(url, headers: headers, body: body);
   var resBody = json.decode(response.body);
   var resBodyValues = resBody['Value'];
-  // var resBodyValuesProjeler = resBodyValues[0]['YETKILIPROJELER'];
   print(resBodyValues);
-  //print(resBodyValuesProjeler);
   if (resBody['Message'] == "Success") {
     List<Kullanici> kullanicilar = [];
-    //List<Yetkiliprojeler> yetkiliprojeler = [];
-
+    List<Yetkiliprojeler> yetkiliprojeler = [];
     for (var order in resBodyValues) {
-      // for (var item in resBodyValuesProjeler) {
-      //   Yetkiliprojeler(
-      //       projeadi: item["PROJEADI"] ?? "", projeid: item["PROJEID"]);
-      // }
+      yetkiliprojeler.add(Yetkiliprojeler(
+        projeadi: order["PROJEADI"] ?? "",
+        projeid: order["PROJEID"] ?? "",
+      ));
+    }
+    for (var order in resBodyValues) {
       kullanicilar.add(Kullanici(
         kullaniciadisoyadi: order["KULLANICIADISOYADI"] ?? "",
         kullaniciid: order["KULLANICID"] ?? "",
@@ -42,10 +41,11 @@ Future<dynamic> getUserValues() async {
         personelid: order["PERSONELID"] ?? "",
         idariisleryetkili: order["IDARIISLERYETKILI"] ?? "",
         ikyetkili: order["IKYETKILI"] ?? "",
+        yetkiliprojeler: yetkiliprojeler,
       ));
     }
+    _userController.deleteKullanici();
     _userController.addListKullanici(kullanicilar);
-    //_userController.addListYetkiliprojeler(yetkiliprojeler);
     return (resBodyValues as List).map((e) {
       DBProvider.db.createKullaniciList(Kullanici.fromMap(e));
     }).toList();

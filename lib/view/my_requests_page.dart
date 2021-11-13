@@ -7,6 +7,7 @@ import 'package:falckonfirecommander/model/dataaccess/get_firma_adres.dart';
 import 'package:falckonfirecommander/model/dataaccess/get_machine_infos.dart';
 import 'package:falckonfirecommander/model/dataaccess/get_users.dart';
 import 'package:falckonfirecommander/model/dataaccess/set_planli_bakim_detay.dart';
+
 import 'package:flutter/painting.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -174,11 +175,11 @@ class _MyRequestsPageState extends State<MyRequestsPage> {
                 renk: Color(AppColors.secondarycolor),
               ),
               Visibility(
-                visible: true,
+                visible: false,
                 child: OfflineButton(
                   textValue: 'SET BAKIM DETAYLARI ' + ' ' + '($value)',
                   method: () {
-                    EasyLoading.show(status: 'İndiriliyor');
+                    EasyLoading.show(status: 'Set Ediliyor');
                     Future<dynamic> x = setPlanliBakimDetaylari();
                     x.then((value) {
                       if (value == 'İşlem Başarısız') {
@@ -187,17 +188,16 @@ class _MyRequestsPageState extends State<MyRequestsPage> {
                       } else {
                         EasyLoading.dismiss();
                         print(value);
-                        Get.toNamed('/setBakimDetaylariPage');
                       }
                     });
                   },
                   renk: Color(AppColors.secondarycolor),
                 ),
               ),
-              OfflineButton(
-                  textValue: 'ÇEVRİMDIŞI KAYITLARI YÜKLE' + ' ' + '($value)',
-                  method: () async {},
-                  renk: Colors.green.shade500),
+              // OfflineButton(
+              //     textValue: 'ÇEVRİMDIŞI KAYITLARI YÜKLE' + ' ' + '($value)',
+              //     method: () async {},
+              //     renk: Colors.green.shade500),
               OfflineButton(
                   textValue: 'ÇEVRİMDIŞI KAYIT LİSTESİ' + ' ' + '($value)',
                   method: () {

@@ -35,6 +35,7 @@ Future<dynamic> getEquipmentValues() async {
           makinemodeladi: order["MAKINEMODELADI"] ?? "",
           makinetipadi: order["MAKINETIPADI"] ?? ""));
     }
+    _userController.deleteEkipman();
     _userController.addListEkipman(ekipmanlar);
     return (resBodyValues as List).map((e) {
       DBProvider.db.createEkipmanList(Ekipman.fromMap(e));

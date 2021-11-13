@@ -35,6 +35,7 @@ Future<dynamic> getBakimTanimlari() async {
         planlibakimtanimid: order["PLANLIBAKIMTANIMID"],
       ));
     }
+    _userController.deleteBakimTanimlari();
     _userController.addListBakimTanimlar(tanimlar);
     return (resBodyValues as List).map((e) {
       DBProvider.db.createBakimTanimList(BakimTanimlari.fromMap(e));

@@ -1,17 +1,17 @@
 import 'dart:convert';
 
-// List<BakimDetaylariList> bakimDetaylariListFromMap(String str) =>
-//     List<BakimDetaylariList>.from(
-//         json.decode(str).map((x) => BakimDetaylariList.fromMap(x)));
+List<BakimDetaylariList> bakimDetaylariListFromMap(String str) =>
+    List<BakimDetaylariList>.from(
+        json.decode(str).map((x) => BakimDetaylariList.fromMap(x)));
 
-// String bakimDetaylariListToMap(List<BakimDetaylariList> data) =>
-//     json.encode(List<dynamic>.from(data.map((x) => x.toMap())));
+String bakimDetaylariListToMap(List<BakimDetaylariList> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toMap())));
 
-BakimDetaylariList bakimDetaylariListFromMap(String str) =>
-    BakimDetaylariList.fromMap(json.decode(str));
+//BakimDetaylariList bakimDetaylariListFromMap(String str) =>
+// BakimDetaylariList.fromMap(json.decode(str));
 
-String bakimDetaylariListToMap(BakimDetaylariList data) =>
-    json.encode(data.toMap());
+//String bakimDetaylariListToMap(BakimDetaylariList data) =>
+//json.encode(data.toMap());
 
 class BakimDetaylariList {
   BakimDetaylariList({

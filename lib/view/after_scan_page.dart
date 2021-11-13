@@ -6,6 +6,8 @@ import 'package:falckonfirecommander/model/dataaccess/logout.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 
 import 'package:falckonfirecommander/materials/colors.dart';
@@ -21,6 +23,15 @@ class AfterScanPage extends StatefulWidget {
 
 class _AfterScanPage extends State<AfterScanPage> {
   final ScannerContraller _scannerContraller = Get.find();
+  String? latitude = "";
+  String? longitude = "";
+  Future getLocation() async {
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.low);
+    latitude = position.latitude.toString();
+    longitude = position.longitude.toString();
+    print(position.toString());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +112,14 @@ class _AfterScanPage extends State<AfterScanPage> {
                   DetPage(
                       textValue: 'BULUNDUĞU YERİ GÜNCELLE',
                       widthh: Get.width,
-                      method: () {},
+                      method: () async {
+                        await getLocation();
+                        EasyLoading.show(
+                          status:
+                              "Bulunduğu Yer : $latitude \n ve $longitude Olarak Güncellendi",
+                          dismissOnTap: true,
+                        );
+                      },
                       icon: Icon(Icons.location_on)),
                   DetPage(
                       widthh: Get.width,

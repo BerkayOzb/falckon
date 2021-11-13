@@ -1,4 +1,3 @@
-import 'package:falckonfirecommander/materials/colors.dart';
 import 'package:falckonfirecommander/materials/languages.dart';
 import 'package:falckonfirecommander/view/adres_page.dart';
 import 'package:falckonfirecommander/view/bakim_detaylari_page.dart';
@@ -10,7 +9,6 @@ import 'package:falckonfirecommander/view/login_page.dart';
 import 'package:falckonfirecommander/view/after_scan_page.dart';
 import 'package:falckonfirecommander/view/my_requests_page.dart';
 import 'package:falckonfirecommander/view/offline_list_page.dart';
-import 'package:falckonfirecommander/view/set_bakim_detaylari_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -45,8 +43,6 @@ class MyApp extends StatelessWidget {
             name: '/ekipmantanimlaripage', page: () => EkipmanTanimlariPage()),
         GetPage(name: '/bakimTanimlariPage', page: () => BakimTanimlariPage()),
         GetPage(name: '/bakimDetaylariPage', page: () => BakimDetaylariPage()),
-        GetPage(
-            name: '/setBakimDetaylariPage', page: () => SetBakimDetaylariPage())
       ],
     );
   }

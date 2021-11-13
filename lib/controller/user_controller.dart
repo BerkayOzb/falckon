@@ -15,7 +15,7 @@ class UserController extends GetxController {
   List<BakimTanimlari> bakimTanimlari = [];
   List<BakimDetaylari> bakimDetaylari = [];
   List<BakimDetaylariList> bakimDetaylariList = [];
-  //List<Yetkiliprojeler> yetkiliProjeler = [];
+  List<Yetkiliprojeler> yetkiliProjeler = [];
   List<Kullanici> kullanicilar = [];
   UserController(this.username, this.password);
 
@@ -26,6 +26,9 @@ class UserController extends GetxController {
   List<Ekipman>? getEkipman() {
     return ekipmanlar;
   }
+  deleteEkipman() {
+    ekipmanlar.clear();
+  }
 
   addListBakimDetaylariList(List<BakimDetaylariList> mylist) {
     bakimDetaylariList = mylist;
@@ -34,14 +37,20 @@ class UserController extends GetxController {
   List<BakimDetaylariList>? getBakimDetaylariList() {
     return bakimDetaylariList;
   }
+  deleteBakimDetaylariList() {
+    bakimDetaylariList.clear();
+  }
 
-  // addListYetkiliprojeler(List<Yetkiliprojeler> mylist) {
-  //   yetkiliProjeler = mylist;
-  // }
+  addListYetkiliprojeler(List<Yetkiliprojeler> mylist) {
+    yetkiliProjeler = mylist;
+  }
 
-  // List<Yetkiliprojeler>? getYetkiliprojeler() {
-  //   return yetkiliProjeler;
-  // }
+  List<Yetkiliprojeler>? getYetkiliprojeler() {
+    return yetkiliProjeler;
+  }
+  deleteYetkiliProjeler() {
+    yetkiliProjeler.clear();
+  }
 
   addListKullanici(List<Kullanici> mylist) {
     kullanicilar = mylist;
@@ -51,12 +60,19 @@ class UserController extends GetxController {
     return kullanicilar;
   }
 
+  deleteKullanici() {
+    kullanicilar.clear();
+  }
+
   addListBakimTanimlar(List<BakimTanimlari> mylist) {
     bakimTanimlari = mylist;
   }
 
   List<BakimDetaylari>? getBakimDetaylari() {
     return bakimDetaylari;
+  }
+  deleteBakimDetaylari() {
+    bakimDetaylari.clear();
   }
 
   addListBakimDetaylar(List<BakimDetaylari> mylist) {
@@ -66,6 +82,9 @@ class UserController extends GetxController {
   List<BakimTanimlari>? getBakimTanimlari() {
     return bakimTanimlari;
   }
+  deleteBakimTanimlari() {
+    bakimTanimlari.clear();
+  }
 
   addListAdresler(List<Adres> mylist) {
     adresler = mylist;
@@ -73,5 +92,8 @@ class UserController extends GetxController {
 
   List<Adres>? getAdresler() {
     return adresler;
+  }
+  deleteAdresler() {
+    adresler.clear();
   }
 }
