@@ -16,7 +16,7 @@ Future<dynamic> getFirmaAdres() async {
   Map<String, dynamic> inputData = {
     "LOGINKODU": _userController.username,
     "SIFRE": _userController.password,
-    "PARAMETRELER": {"FIRMATANIMID": "1"}
+    "PARAMETRELER": {}
   };
   var body = json.encode(inputData);
   var url = Uri.parse(ApiProvider.firmaAdres);

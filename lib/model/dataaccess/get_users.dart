@@ -24,21 +24,21 @@ Future<dynamic> getUserValues() async {
   var resBody = json.decode(response.body);
   var resBodyValues = resBody['Value'];
   print(resBodyValues);
-  if (resBody['Message'] == "Success") {
+  if (resBody['Message'] == "Başarılı") {
     List<Kullanici> kullanicilar = [];
     List<Yetkiliprojeler> yetkiliprojeler = [];
     for (var order in resBodyValues) {
       yetkiliprojeler.add(Yetkiliprojeler(
         projeadi: order["PROJEADI"] ?? "",
-        projeid: order["PROJEID"] ?? "",
+        projeid: order["PROJEID"],
       ));
     }
     for (var order in resBodyValues) {
       kullanicilar.add(Kullanici(
         kullaniciadisoyadi: order["KULLANICIADISOYADI"] ?? "",
-        kullaniciid: order["KULLANICID"] ?? "",
+        kullaniciid: order["KULLANICID"] ,
         loginkodu: order["LOGINKODU"] ?? "",
-        personelid: order["PERSONELID"] ?? "",
+        personelid: order["PERSONELID"] ,
         idariisleryetkili: order["IDARIISLERYETKILI"] ?? "",
         ikyetkili: order["IKYETKILI"] ?? "",
         yetkiliprojeler: yetkiliprojeler,

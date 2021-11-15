@@ -16,7 +16,7 @@ Future<dynamic> getBakimDetaylari() async {
   Map<String, dynamic> inputData = {
     "LOGINKODU": _userController.username,
     "SIFRE": _userController.password,
-    "PARAMETRELER": {"PLANLIBAKIMTANIMID": "1"}
+    "PARAMETRELER": {}
   };
   var body = json.encode(inputData);
   var url = Uri.parse(ApiProvider.bakimDetaylari);

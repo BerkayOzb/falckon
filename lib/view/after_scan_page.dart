@@ -135,21 +135,21 @@ class _AfterScanPage extends State<AfterScanPage> {
                         Icons.play_arrow,
                         size: 35,
                       )),
-                  Obx(() => RequestPageDetailed2(
+                  Obx(() => RequestPageDetailed3(
                       title: 'KODU', value: _scannerContraller.data.value)),
-                  RequestPageDetailed2(title: 'ADI', value: 'How is it look'),
-                  RequestPageDetailed2(title: 'TİP', value: 'How is it look'),
-                  RequestPageDetailed2(title: 'MARKA', value: 'How is it look'),
-                  RequestPageDetailed2(title: 'MODEL', value: 'How is it look'),
-                  RequestPageDetailed2(
+                  RequestPageDetailed3(title: 'ADI', value: 'How is it look'),
+                  RequestPageDetailed3(title: 'TİP', value: 'How is it look'),
+                  RequestPageDetailed3(title: 'MARKA', value: 'How is it look'),
+                  RequestPageDetailed3(title: 'MODEL', value: 'How is it look'),
+                  RequestPageDetailed3(
                       title: 'ÜRETİM TARİHİ', value: 'How is it look'),
-                  RequestPageDetailed2(
+                  RequestPageDetailed3(
                       title: 'DOLUM TARİHİ', value: 'How is it look'),
-                  RequestPageDetailed2(
+                  RequestPageDetailed3(
                       title: 'KONTROL TARİHİ', value: 'How is it look'),
-                  RequestPageDetailed2(
+                  RequestPageDetailed3(
                       title: 'MİLADI', value: 'How is it look'),
-                  RequestPageDetailed2(
+                  RequestPageDetailed3(
                       title: 'BULUNDUĞU YER', value: 'How is it look'),
                 ],
               ),

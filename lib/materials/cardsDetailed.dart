@@ -61,6 +61,45 @@ class RequestPageDetailed2 extends StatelessWidget {
   }
 }
 
+class RequestPageDetailed3 extends StatelessWidget {
+  final String title;
+  final String value;
+  const RequestPageDetailed3(
+      {Key? key, required this.title, required this.value})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 5),
+              child: Text(
+                title,
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                    color: Color(AppColors.whitetextcolor), fontSize: 15),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  color: Color(AppColors.whitetextcolor),
+                  borderRadius: BorderRadius.circular(10)),
+              padding: EdgeInsets.all(8),
+              child: Text(value),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class RequestPageDropdownDet extends StatelessWidget {
   final String title;
   final items;

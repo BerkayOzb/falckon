@@ -64,7 +64,7 @@ class DBProvider {
   static const String MAKINE_MODEL_ADI = 'MAKINEMODELADI';
   static const String MAKINE_TIP_ADI = 'MAKINETIPADI';
   //Kullanıcı Tablosu
-  static const String KULLANICI_TABLOSU = 'kullaniciTablo';
+  static const String KULLANICI_TABLOSU = 'kullaniciTabloo';
   static const dynamic IDARI_IS_YETKILI = 'IDARIISLERYETKILI';
   static const dynamic IK_YETKILI = 'IKYETKILI';
   static const String KULLANICI_ADI_SOYADI = 'KULLANICIADISOYADI';
@@ -118,8 +118,8 @@ class DBProvider {
           '$MAKINE_TIP_ADI TEXT'
           ')');
       await db.execute('CREATE TABLE $KULLANICI_TABLOSU('
-          '$IDARI_IS_YETKILI TEXT,'
-          '$IK_YETKILI TEXT,'
+          '$IDARI_IS_YETKILI INTEGER'
+          '$IK_YETKILI INTEGER'
           '$KULLANICI_ADI_SOYADI TEXT,'
           '$KULLANICI_ID INTEGER,'
           '$LOGIN_KODU TEXT,'
@@ -231,8 +231,8 @@ class DBProvider {
 
   createBakimDetaylariList(BakimDetaylariList bakimDetaylariList) async {
     final db = await database;
-    final result =
-        await db.insert('$BAKIM_DETAYLARI_LIST_TABLOSU', bakimDetaylariList.toMap());
+    final result = await db.insert(
+        '$BAKIM_DETAYLARI_LIST_TABLOSU', bakimDetaylariList.toMap());
     return result;
   }
 

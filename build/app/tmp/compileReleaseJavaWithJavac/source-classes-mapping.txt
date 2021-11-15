@@ -1,4 +1,0 @@
-io/flutter/plugins/GeneratedPluginRegistrant.java
- io.flutter.plugins.GeneratedPluginRegistrant
-com/example/falckonfirecommander/BuildConfig.java
- com.example.falckonfirecommander.BuildConfig

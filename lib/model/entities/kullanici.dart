@@ -8,8 +8,8 @@ String kullaniciToMap(List<Kullanici> data) =>
 
 class Kullanici {
   Kullanici({
-    this.idariisleryetkili,
-    this.ikyetkili,
+    required this.idariisleryetkili,
+    required this.ikyetkili,
     this.kullaniciadisoyadi,
     this.kullaniciid,
     this.loginkodu,
@@ -17,8 +17,8 @@ class Kullanici {
     this.yetkiliprojeler,
   });
 
-  final dynamic idariisleryetkili;
-  final dynamic ikyetkili;
+  final bool idariisleryetkili;
+  final bool ikyetkili;
   final String? kullaniciadisoyadi;
   final int? kullaniciid;
   final String? loginkodu;
@@ -41,8 +41,8 @@ class Kullanici {
       );
 
   Map<String, dynamic> toMap() => {
-        "IDARIISLERYETKILI": idariisleryetkili,
-        "IKYETKILI": ikyetkili,
+        "IDARIISLERYETKILI": idariisleryetkili ? 1 : 0,
+        "IKYETKILI": ikyetkili ? 1 : 0,
         "KULLANICIADISOYADI":
             kullaniciadisoyadi == null ? null : kullaniciadisoyadi,
         "KULLANICIID": kullaniciid == null ? null : kullaniciid,
